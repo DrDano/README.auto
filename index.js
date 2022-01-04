@@ -17,9 +17,60 @@
 
 
 // TODO: Include packages needed for this application
+const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const promptQuestions = () => {
+    return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name? (Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Your name is a required input.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'githubUser',
+            message: 'What is your GitHub username? (Required)',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Your GitHub username is a required input.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter your email address (Optional): '
+        },
+        {
+            type: 'input',
+            name: 'title',
+            message: 'What is the title of your project? (Required)',
+            validate: titleInput => {
+                if (titleInput) {
+                    return true;
+                } else {
+                    console.log('The title of your project is a required input.');
+                    return false;
+                }
+            }
+        }
+    ]);
+};
+
+promptQuestions()
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}

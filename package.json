@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DrDano/README.auto/issues"
   },
-  "homepage": "https://github.com/DrDano/README.auto#readme"
+  "homepage": "https://github.com/DrDano/README.auto#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
 }
