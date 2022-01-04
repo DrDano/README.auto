@@ -104,7 +104,41 @@ const promptQuestions = () => {
                 } else {
                     return false;
                 }
+            },
+            validate: installInput => {
+                if (installInput) {
+                    return true;
+                } else {
+                    console.log('Please provide installation instructions.');
+                    return false;
+                }
             }
+        },
+        {
+            type: 'editor',
+            name: 'usage',
+            message: 'Please provide usage instructions. (Required)',
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('Please provide usage instructions');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'editor',
+            name: 'credits',
+            message: 'Please credit any contributors or resources you used to build this project. (Required)',
+            validate: credits => {
+                if (credits) {
+                    return true;
+                } else {
+                    console.log('Please list credits for the project.');
+                    return false;
+                }
+            } 
         }
         
     ]);
