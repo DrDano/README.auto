@@ -1,14 +1,19 @@
 {
-  "name": "static-site",
+  "name": "readme.auto",
   "version": "1.0.0",
-  "description": "",
+  "description": "Takes CLI input from the user and incorporates it into a professionally-formatted REAME.md file",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrDano/README.auto.git"
+  },
+  "author": "Daniel H",
   "license": "ISC",
-  "dependencies": {
-    "inquirer": "^6.3.1"
-  }
+  "bugs": {
+    "url": "https://github.com/DrDano/README.auto/issues"
+  },
+  "homepage": "https://github.com/DrDano/README.auto#readme"
 }
