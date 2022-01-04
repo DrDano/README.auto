@@ -66,11 +66,54 @@ const promptQuestions = () => {
                     return false;
                 }
             }
+        },
+        {
+            type: 'editor',
+            name: 'projectDesc',
+            message: 'Please provide a description of the project. (Required)',
+            validate: descInput => {
+                if (descInput) {
+                    return true;
+                } else {
+                    console.log('The description of your project is a required input.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'list',
+            name: 'projectType',
+            message: 'What kind of project is this? (Required)',
+            choices: ['browser-based', 'node-based'],
+            validate: typeInput => {
+                if (typeInput) {
+                    return true;
+                } else {
+                    console.log('You must select a project type.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'editor',
+            name: 'installation',
+            message: 'Please provide installation instructions for the project. (Required)',
+            when: ({projectType}) => {
+                if (projectType === 'node-based') {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         }
+        
     ]);
 };
 
 promptQuestions()
+.then(projectData => {
+    console.log(projectData)
+})
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
