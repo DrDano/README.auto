@@ -169,7 +169,7 @@ const promptBadges = (badgeConfirm, badgeData) => {
     } if (badgeConfirm) {
         console.log('Add Badges')
     } else {
-        return;
+        return badgeData;
     }
 
     return inquirer.prompt([
@@ -187,7 +187,7 @@ const promptBadges = (badgeConfirm, badgeData) => {
     ]).then(badgePromptData => {
         badgeData.push(badgePromptData);
         if(badgePromptData.confirmAddMoreBadges) {
-            return promptBadges(badgeData);
+            return promptBadges(true, badgeData);
         } else {
             console.log(badgeData)
             return badgeData;
@@ -197,7 +197,6 @@ const promptBadges = (badgeConfirm, badgeData) => {
 
 promptQuestions()
 .then(projectData => {
-    console.log(projectData.confirmAddBadge);
     promptBadges(projectData.confirmAddBadge)
 })
 
