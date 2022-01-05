@@ -21,9 +21,12 @@ const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
-const promptQuestions = (readmeData) => {
 
-    return inquirer.prompt([
+let totalData = []
+
+const promptQuestions = () => {
+    
+    inquirer.prompt([
         // {
         //     type: 'input',
         //     name: 'name',
@@ -159,20 +162,7 @@ const promptQuestions = (readmeData) => {
             name: 'confirmOptional',
             message: 'Would you like to also add other optional fields (contribution instructions and tests?)',
             default: false
-        }
-    ]);
-};
-
-const promptBadges = (badgeConfirm, badgeData) => {
-    if (!badgeData) {
-        badgeData = [];
-    } if (badgeConfirm) {
-        console.log('Add Badges')
-    } else {
-        return badgeData;
-    }
-
-    return inquirer.prompt([
+        },
         {
             type: 'input',
             name: 'badgeLogo',
@@ -184,21 +174,13 @@ const promptBadges = (badgeConfirm, badgeData) => {
             message: 'Would you like to add more badges?',
             default: false
         }
-    ]).then(badgePromptData => {
-        badgeData.push(badgePromptData);
-        if(badgePromptData.confirmAddMoreBadges) {
-            return promptBadges(true, badgeData);
-        } else {
-            return badgeData;
-        }
-    })
-}
+    ])
+    
+};
+
 
 promptQuestions()
-.then(promptBadges)
-.then(badges => {
-    console.log(badges);
-})
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
