@@ -26,7 +26,7 @@ let totalData = []
 
 const promptQuestions = () => {
     
-    inquirer.prompt([
+    return inquirer.prompt([
         // {
         //     type: 'input',
         //     name: 'name',
@@ -154,32 +154,52 @@ const promptQuestions = () => {
         {
             type: 'confirm',
             name: 'confirmAddBadge',
-            message: 'Would you like to add badges to your README?',
-            default: false
-        },
-        {
-            type: 'confirm',
-            name: 'confirmOptional',
-            message: 'Would you like to also add other optional fields (contribution instructions and tests?)',
+            message: 'Would you like to add a custom badge to your README?',
             default: false
         },
         {
             type: 'input',
             name: 'badgeLogo',
-            message: 'Please provide a logo name (must be complete name [ex. javascript, not JS])',
+            message: 'Please provide a logo name (must be complete name [ex. javascript, not JS]).',
+            when: ({confirmAddBadge}) => {
+                if (confirmAddBadge) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
         },
         {
-            type: 'confirm',
-            name: 'confirmAddMoreBadges',
-            message: 'Would you like to add more badges?',
-            default: false
-        }
+            type: 'input',
+            name: 'badgeLabel',
+            message: 'Please provide a label for your badge.',
+            when: ({confirmAddBadge}) => {
+                if (confirmAddBadge) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'badgeMessage',
+            message: 'Please provide a message for your badge.',
+            when: ({confirmAddBadge}) => {
+                if (confirmAddBadge) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
     ])
-    
 };
 
 
-promptQuestions()
+promptQuestions().then(promptResponse => {
+    console.log(promptResponse)
+})
 
 
 // TODO: Create a function to write README file
