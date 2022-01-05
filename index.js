@@ -189,15 +189,15 @@ const promptBadges = (badgeConfirm, badgeData) => {
         if(badgePromptData.confirmAddMoreBadges) {
             return promptBadges(true, badgeData);
         } else {
-            console.log(badgeData)
             return badgeData;
         }
     })
 }
 
 promptQuestions()
-.then(projectData => {
-    promptBadges(projectData.confirmAddBadge)
+.then(promptBadges)
+.then(badges => {
+    console.log(badges);
 })
 
 // TODO: Create a function to write README file
