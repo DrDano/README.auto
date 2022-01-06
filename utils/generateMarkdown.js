@@ -20,7 +20,7 @@ function renderGeneralBadge(badgeConfirm,label,message,logo) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license) {
-    return `Licensed under (${license})[https://opensource.org/licenses/${license}] ${Date.getFullYear()}`;
+    return `Licensed under (${license})[https://opensource.org/licenses/${license}] ${new Date().getFullYear()}`;
   }
 
   return '';
@@ -31,38 +31,44 @@ function generateMarkdown(data) {
   return `# ${data.title}
   ![](${renderGeneralBadge(data.confirmAddBadge, data.badgeLabel, data.badgeMessage, data.badgeLogo)})
 
-  ##Description
+  ## Description
+
   ${data.projectDesc}
 
-  ##Table of contents
-  *[Installation](#installation)
-  *[Usage](#usage)
-  *[Maintainers](#maintainers)
-  *[Contributing](#contributing)
-  *[Tests](#tests)
-  *[Credits](#credits)
-  *[License](#license)
+  ## Table of contents
 
-  ##Installation
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Maintainers](#maintainers)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Credits](#credits)
+  * [License](#license)
+
+  ## Installation
   ${data.installation}
 
-  ##Usage
+  ## Usage
   ${data.usage}
 
-  ##Maintainer
-  (@${data.name})[https://github.com/${data.githubUser}]
-  Email: (${data.email})[${data.email}]
+  ## Maintainer
+  [@${data.name}](https://github.com/${data.githubUser})
 
-  ##Contributing
-  ${contribution}
+  Email: [${data.email}](${data.email})
 
-  ##Tests
-  ${tests}
+  ## Contributing
 
-  ##Credits
-  ${credits}
+  ${data.contribution}
 
-  ##License
+  ## Tests
+
+  ${data.tests}
+
+  ## Credits
+
+  ${data.credits}
+
+  ## License
   ${renderLicenseSection(data.license)} ${renderLicenseBadge(data.license)}
 `;
 }
