@@ -119,7 +119,7 @@ const promptQuestions = () => {
         {
             type: 'input',
             name: 'badgeLogo',
-            message: 'Please provide a logo name (must be complete name [ex. javascript, not JS] and do not use any separator characters).',
+            message: 'Please provide a logo name (must be complete name [ex. javascript, not JS] only use alphanumeric characters without separators).',
             when: ({confirmAddBadge}) => {
                 if (confirmAddBadge) {
                     return true;

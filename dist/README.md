@@ -1,5 +1,5 @@
 # my-webpage-generator
-  ![](https://img.shields.io/badge/javascript-100%-blue?logo=javascript)
+  ![](https://img.shields.io/badge/javascript-100-blue?logo=javascript)
 
   ## Description
 
