@@ -1,9 +1,9 @@
-# README.auto
-  ![](https://img.shields.io/badge/javascript-100%-blue?logo=javascript)
+# birds
+  ![](https://img.shields.io/badge/javascript-pooppoopbop-blue?logo=javascript)
 
   ## Description
 
-  This package runs on node.js and generates a markdown file for you in a standard README format.
+  birds
 
   ## Table of contents
 
@@ -16,29 +16,29 @@
   * [License](#license)
 
   ## Installation
-  First fork the project and clone the repository. Then in the CLI enter 'node install' to install all dependencies.
+  birds
 
   ## Usage
-  In the CLI enter 'node index.js' to execute the main script. You will be led through a series of prompts and once you have completed them your markdown file will appear in the 'dist' directory.
+  birds
 
   ## Maintainer
-  [@Daniel Harned](https://github.com/DrDano)
+  [@Daniel](https://github.com/DrDano)
 
   Email: [danielharned@gmail.com](mailto:danielharned@gmail.com)
 
   ## Contributing
 
-  Forking is encouraged!
+  yes
 
   ## Tests
 
-  No tests are currently available.
+  yes
 
   ## Credits
 
-  * opensource.org
+  birds
 
   ## License
-  Licensed under [MIT](https://opensource.org/licenses/MIT) 2022 
+  Licensed under [apache-2.0](https://choosealicense.com/licenses/apache-2.0) 2022 
   
-  ![](https://img.shields.io/badge/license-MIT-blue)
+  ![](https://img.shields.io/badge/license-apache2.0-blue)

@@ -125,8 +125,8 @@ const promptQuestions = () => {
         {
             type: 'list',
             name: 'license',
-            message: 'Choose a license for your project, the MIT license is the preferred choice for open-source projects.',
-            choices: ['MIT', 'Academic Free License v3.0', 'Artistic license 2.0', 'Creative Commons license family', 'Educational Community License', 'ISC', 'Microsoft Public License', 'Open Software License 3.0', 'The Unilicense'],
+            message: 'Choose a license for your project (MIT is preferred for most open-source projects).',
+            choices: ['MIT', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License', 'The Unilicense'],
             default: 'MIT'
         },
         {
@@ -138,7 +138,7 @@ const promptQuestions = () => {
         {
             type: 'input',
             name: 'badgeLogo',
-            message: 'Please provide a logo name (must be complete name [ex. javascript, not JS]).',
+            message: 'Please provide a logo name (must be complete name [ex. javascript, not JS] and do not use any separator characters).',
             when: ({confirmAddBadge}) => {
                 if (confirmAddBadge) {
                     return true;
@@ -150,7 +150,7 @@ const promptQuestions = () => {
         {
             type: 'input',
             name: 'badgeLabel',
-            message: 'Please provide a label for your badge.',
+            message: 'Please provide a label for your badge (do not use separator characters [ex. space]).',
             when: ({confirmAddBadge}) => {
                 if (confirmAddBadge) {
                     return true;
@@ -162,7 +162,7 @@ const promptQuestions = () => {
         {
             type: 'input',
             name: 'badgeMessage',
-            message: 'Please provide a message for your badge.',
+            message: 'Please provide a message for your badge (do not use separator characters [ex. space]).',
             when: ({confirmAddBadge}) => {
                 if (confirmAddBadge) {
                     return true;

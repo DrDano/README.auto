@@ -1,6 +1,7 @@
 function renderLicenseBadge(license) {
   if (license) {
-    return `![](https://img.shields.io/badge/license-${license}-blue)`
+    const edited = license.split("-").join("");
+    return `![](https://img.shields.io/badge/license-${edited}-blue)`
   }
 
   return '';
@@ -8,15 +9,32 @@ function renderLicenseBadge(license) {
 
 function renderGeneralBadge(badgeConfirm,label,message,logo) {
   if (badgeConfirm) {
-    return `https://img.shields.io/badge/${label}-${message}-blue?logo=${logo}`
+    const edited = [message.split(" ").join(''), label.split(" ").join(''), logo.split(" ").join('')]
+    return `https://img.shields.io/badge/${edited[1]}-${edited[0]}-blue?logo=${edited[2]}`
   }
 
   return '';
 }
 
-function renderLicenseSection(license) {
-  if (license) {
-    return `Licensed under [${license}](https://opensource.org/licenses/${license}) ${new Date().getFullYear()}`;
+retrieveLicense = (license) => {
+  const licenses = 
+  {
+    'MIT': 'mit',
+    'GNU AGPLv3': 'agpl-3.0',
+    'GNU GPLv3': 'gpl-3.0',
+    'GNU LGPLv3': 'lgpl-3.0',
+    'Mozilla Public License 2.0': 'mpl-2.0',
+    'Apache License 2.0':'apache-2.0',
+    'Boost Software License 1.0': 'bsl-1.0',
+    'The Unilicense': 'unilicense'
+  }
+
+  return licenses[license]
+}
+
+function renderLicenseSection(licenseCode) {
+  if (licenseCode) {
+    return `Licensed under [${licenseCode}](https://choosealicense.com/licenses/${licenseCode}) ${new Date().getFullYear()}`;
   }
 
   return '';
@@ -65,9 +83,9 @@ function generateMarkdown(data) {
   ${data.credits}
 
   ## License
-  ${renderLicenseSection(data.license)} 
+  ${renderLicenseSection(retrieveLicense(data.license))} 
   
-  ${renderLicenseBadge(data.license)}
+  ${renderLicenseBadge(retrieveLicense(data.license))}
 `;
 }
 
