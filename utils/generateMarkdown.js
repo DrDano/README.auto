@@ -50,7 +50,7 @@ function generateMarkdown(data) {
   ## Maintainer
   [@${data.name}](https://github.com/${data.githubUser})
 
-  Email: [${data.email}](${data.email})
+  Email: [${data.email}](mailto:${data.email})
 
   ## Contributing
 

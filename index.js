@@ -222,7 +222,7 @@ promptQuestions().then(promptResponse => {
     return generateMarkdown(promptResponse)
 })
 .then(markdownOutput => {
-    writeToFile('./markdownTest.md', markdownOutput)
+    writeToFile('./dist/README.md', markdownOutput)
 })
 
 
