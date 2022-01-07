@@ -7,6 +7,7 @@ function renderLicenseBadge(license) {
   return '';
 }
 
+// render the URL for the optional general badge prompted by the user
 function renderGeneralBadge(badgeConfirm,label,message,logo) {
   if (badgeConfirm) {
     const edited = [message.split(" ").join(''), label.split(" ").join(''), logo.split(" ").join('')]
@@ -16,6 +17,7 @@ function renderGeneralBadge(badgeConfirm,label,message,logo) {
   return '';
 }
 
+// retrieve license codes used in URL generation
 retrieveLicense = (license) => {
   const licenses = 
   {
@@ -32,6 +34,7 @@ retrieveLicense = (license) => {
   return licenses[license]
 }
 
+// render entire string for license section
 function renderLicenseSection(licenseCode) {
   if (licenseCode) {
     return `Licensed under [${licenseCode}](https://choosealicense.com/licenses/${licenseCode}) ${new Date().getFullYear()}`;
@@ -40,7 +43,7 @@ function renderLicenseSection(licenseCode) {
   return '';
 }
 
-// TODO: Create a function to generate markdown for README
+// generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
   ![](${renderGeneralBadge(data.confirmAddBadge, data.badgeLabel, data.badgeMessage, data.badgeLogo)})

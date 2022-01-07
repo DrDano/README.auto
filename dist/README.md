@@ -1,9 +1,9 @@
-# birds
-  ![](https://img.shields.io/badge/javascript-pooppoopbop-blue?logo=javascript)
+# my-webpage-generator
+  ![](https://img.shields.io/badge/javascript-100%-blue?logo=javascript)
 
   ## Description
 
-  birds
+  generates a webpage for you
 
   ## Table of contents
 
@@ -16,29 +16,29 @@
   * [License](#license)
 
   ## Installation
-  birds
+  how to install
 
   ## Usage
-  birds
+  how to use this application
 
   ## Maintainer
   [@Daniel](https://github.com/DrDano)
 
-  Email: [danielharned@gmail.com](mailto:danielharned@gmail.com)
+  Email: [myemail@gmail.com](mailto:myemail@gmail.com)
 
   ## Contributing
 
-  yes
+  how to contribute
 
   ## Tests
 
-  yes
+  available tests
 
   ## Credits
 
-  birds
+  credits
 
   ## License
-  Licensed under [apache-2.0](https://choosealicense.com/licenses/apache-2.0) 2022 
+  Licensed under [mpl-2.0](https://choosealicense.com/licenses/mpl-2.0) 2022 
   
-  ![](https://img.shields.io/badge/license-apache2.0-blue)
+  ![](https://img.shields.io/badge/license-mpl2.0-blue)
