@@ -1,9 +1,9 @@
-# Bird-Burner
-  ![](https://img.shields.io/badge/blowtorch-100%-blue?logo=google)
+# README.auto
+  ![](https://img.shields.io/badge/javascript-100%-blue?logo=javascript)
 
   ## Description
 
-  makes the task of burning birds a much simpler one with a more straightforward approach
+  This package runs on node.js and generates a markdown file for you in a standard README format.
 
   ## Table of contents
 
@@ -16,27 +16,27 @@
   * [License](#license)
 
   ## Installation
-  install with npm install
+  First fork the project and clone the repository. Then in the CLI enter 'node install' to install all dependencies.
 
   ## Usage
-  start with blowtorch mode and move up to flamethrower when you feel ready
+  In the CLI enter 'node index.js' to execute the main script. You will be led through a series of prompts and once you have completed them your markdown file will appear in the 'dist' directory.
 
   ## Maintainer
-  [@Daniel](https://github.com/DrDano)
+  [@Daniel Harned](https://github.com/DrDano)
 
   Email: [danielharned@gmail.com](mailto:danielharned@gmail.com)
 
   ## Contributing
 
-  send fuel if you would like to contribute
+  Forking is encouraged!
 
   ## Tests
 
-  test using small birds first and then move to larger eagles and hawks
+  No tests are currently available.
 
   ## Credits
 
-  * A big thanks goes out to gasoline and butane
+  * opensource.org
 
   ## License
   Licensed under [MIT](https://opensource.org/licenses/MIT) 2022 
